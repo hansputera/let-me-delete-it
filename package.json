@@ -1,0 +1,24 @@
+{
+  "name": "let-me-delete-it",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Hanif Dwy Putra S <hanifdwyputrasembiring@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@adiwajshing/keyed-db": "^0.2.4",
+    "gampang": "^2.0.0",
+    "module-alias": "^2.2.2"
+  },
+  "_moduleAliases": {
+    "@root": ".",
+    "@rules": "./rules",
+    "@scripts": "./rule_scripts",
+    "@core": "./core",
+    "@config": "./config"
+  }
+}

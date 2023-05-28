@@ -1,0 +1,12 @@
+[
+    {
+        "name": "settings-url-bug",
+        "description": "WA(.)me/settings WhatsApp URL bug on Android, the WhatsApp client would force-close from the app and couldn't see the chats",
+        "onGroup": true,
+        "onPM": true,
+        "script": {
+            "target": "wa-bugs",
+            "exec": "settingsUrl"
+        }
+    }
+]
