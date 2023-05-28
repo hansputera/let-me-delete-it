@@ -32,18 +32,19 @@ class RuleReader
 
         this.rules.clear();
         for (const ruleFile of fs.readdirSync(this.rulesPath)) {
-            if (!ruleFile.endsWith('.js')) return;
+            if (!ruleFile.endsWith('.json')) continue;
 
             const ruleJson = JSON.parse(fs.readFileSync(
                 path.resolve(this.rulesPath, ruleFile)
             ));
 
+            console.info('[Rule] Registering', ruleFile);
             if (Array.isArray(ruleJson)) {
                 ruleJson.forEach(json => {
-                    this.rules.set(json.name, new Rule(...json));
+                    this.rules.set(json.name, new Rule(json));
                 });
             } else {
-                this.rules.set(ruleJson.name, new Rule(...ruleJson));
+                this.rules.set(ruleJson.name, new Rule(ruleJson));
             }
         }
     }

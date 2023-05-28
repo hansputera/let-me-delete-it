@@ -1,12 +1,9 @@
 lockfileVersion: '6.0'
 
 dependencies:
-  '@adiwajshing/keyed-db':
-    specifier: ^0.2.4
-    version: 0.2.4
   gampang:
-    specifier: ^2.0.0
-    version: 2.0.0(@adiwajshing/keyed-db@0.2.4)
+    specifier: ^2.1.0
+    version: 2.1.0
   module-alias:
     specifier: ^2.2.2
     version: 2.2.2
@@ -15,43 +12,6 @@ packages:
 
   /@adiwajshing/keyed-db@0.2.4:
     resolution: {integrity: sha512-yprSnAtj80/VKuDqRcFFLDYltoNV8tChNwFfIgcf6PGD4sjzWIBgs08pRuTqGH5mk5wgL6PBRSsMCZqtZwzFEw==}
-    dev: false
-
-  /@gampang-pkg/baileys-edge@6.0.1(@adiwajshing/keyed-db@0.2.4):
-    resolution: {integrity: sha512-IBIMjD2iUJqE4na5nrgtt3TtZlXHQDYMLRdw9KHgrLG74LLB3hgJ/plkSaFKzTkBCUEjf1O+tKNAi2QWmxcoJg==}
-    peerDependencies:
-      '@adiwajshing/keyed-db': ^0.2.4
-      jimp: ^0.16.1
-      link-preview-js: ^3.0.0
-      qrcode-terminal: ^0.12.0
-      sharp: ^0.30.5
-    peerDependenciesMeta:
-      '@adiwajshing/keyed-db':
-        optional: true
-      jimp:
-        optional: true
-      link-preview-js:
-        optional: true
-      qrcode-terminal:
-        optional: true
-      sharp:
-        optional: true
-    dependencies:
-      '@adiwajshing/keyed-db': 0.2.4
-      '@hapi/boom': 9.1.4
-      axios: 1.4.0
-      futoin-hkdf: 1.5.2
-      libsignal: github.com/adiwajshing/libsignal-node/11dbd962ea108187c79a7c46fe4d6f790e23da97
-      music-metadata: 7.13.4
-      node-cache: 5.1.2
-      pino: 7.11.0
-      protobufjs: 6.11.3
-      ws: 8.13.0
-    transitivePeerDependencies:
-      - bufferutil
-      - debug
-      - supports-color
-      - utf-8-validate
     dev: false
 
   /@hapi/boom@9.1.4:
@@ -147,6 +107,43 @@ packages:
 
   /@types/node@20.2.5:
     resolution: {integrity: sha512-JJulVEQXmiY9Px5axXHeYGLSjhkZEnD+MDPDGbCbIAbMslkKwmygtZFy1X6s/075Yo94sf8GuSlFfPzysQrWZQ==}
+    dev: false
+
+  /@whiskeysockets/baileys@6.1.0(@adiwajshing/keyed-db@0.2.4):
+    resolution: {integrity: sha512-Uf2DIGzW0wRL+jcFmEsQjrr57CpWgwQfvEH1WSo8zJBRzezr+R2dzEeM7CMMpcQ9YP5VzRLXZodpkK7DUAy96w==}
+    peerDependencies:
+      '@adiwajshing/keyed-db': ^0.2.4
+      jimp: ^0.16.1
+      link-preview-js: ^3.0.0
+      qrcode-terminal: ^0.12.0
+      sharp: ^0.30.5
+    peerDependenciesMeta:
+      '@adiwajshing/keyed-db':
+        optional: true
+      jimp:
+        optional: true
+      link-preview-js:
+        optional: true
+      qrcode-terminal:
+        optional: true
+      sharp:
+        optional: true
+    dependencies:
+      '@adiwajshing/keyed-db': 0.2.4
+      '@hapi/boom': 9.1.4
+      axios: 1.4.0
+      futoin-hkdf: 1.5.2
+      libsignal: github.com/adiwajshing/libsignal-node/11dbd962ea108187c79a7c46fe4d6f790e23da97
+      music-metadata: 7.13.4
+      node-cache: 5.1.2
+      pino: 7.11.0
+      protobufjs: 6.11.3
+      ws: 8.13.0
+    transitivePeerDependencies:
+      - bufferutil
+      - debug
+      - supports-color
+      - utf-8-validate
     dev: false
 
   /abort-controller@3.0.0:
@@ -387,18 +384,18 @@ packages:
     engines: {node: '>=8'}
     dev: false
 
-  /gampang@2.0.0(@adiwajshing/keyed-db@0.2.4):
-    resolution: {integrity: sha512-ly5TcdCzxscz9AkoXQJJXq1WO4qxDEsp3kjgpipMU4kjoK5datT4wXLMBa2FWqeODbFj0A1KoMfMJZAnv7MUuA==}
+  /gampang@2.1.0:
+    resolution: {integrity: sha512-XSUAxArTUjtxB5/CN99NZ5iNsFAhID/98qu9j6o7fNRvcsjSDOQUiIASSZzLSYfqTvRrXuHQb04Vc0D2e0yyBA==}
     engines: {node: '>=12.x'}
     dependencies:
-      '@adiwajshing/baileys': /@gampang-pkg/baileys-edge@6.0.1(@adiwajshing/keyed-db@0.2.4)
+      '@adiwajshing/baileys': /@whiskeysockets/baileys@6.1.0(@adiwajshing/keyed-db@0.2.4)
+      '@adiwajshing/keyed-db': 0.2.4
       '@peculiar/webcrypto': 1.4.3
       long: 5.2.3
       pino: 8.14.1
       pino-pretty: 9.4.0
       qrcode: 1.5.3
     transitivePeerDependencies:
-      - '@adiwajshing/keyed-db'
       - bufferutil
       - debug
       - jimp

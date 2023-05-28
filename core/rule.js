@@ -27,7 +27,7 @@ class Rule
             assert.ok(Reflect.has(this.script, 'target'));
             assert.ok(Reflect.has(this.script, 'exec'));
 
-            assert.strictEqual(typeof this.script.name, 'string');
+            assert.strictEqual(typeof this.script.target, 'string');
             assert.strictEqual(typeof this.script.exec, 'string');
         }
     }
