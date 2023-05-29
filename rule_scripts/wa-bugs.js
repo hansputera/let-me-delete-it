@@ -19,7 +19,11 @@ async function settingsUrl(context)
     //     await context.delete();
     // }
 
-    return regex.test(context.text); // auto delete the context
+    if (!regex.test(context.text)) {
+        throw new Error('no pass');
+    } else {
+        return true;
+    }
 }
 
 module.exports = { settingsUrl };

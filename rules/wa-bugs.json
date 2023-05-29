@@ -7,6 +7,7 @@
         "script": {
             "target": "wa-bugs",
             "exec": "settingsUrl"
-        }
+        },
+        "activate": true
     }
 ]

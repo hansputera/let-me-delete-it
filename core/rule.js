@@ -5,9 +5,9 @@ class Rule
 {
     /**
      * @constructor
-     * @param {{ name: string, description: string, onPM: boolean, onGroup: boolean, activate: boolean, match: string, script: { target: string, exec: string }}} param0 Rule::_constructor props
+     * @param {{ name: string, description: string, onPM: boolean, onGroup: boolean, activate: boolean, match: string, script: { target: string, exec: string }, flags?: string[] }} param0 Rule::_constructor props
      */
-    constructor({ name, description, onPM, onGroup, activate, match, script })
+    constructor({ name, description, onPM, onGroup, activate, match, script, flags })
     {
         this.name = name;
         this.description = description || 'No rule description';
@@ -17,6 +17,7 @@ class Rule
         
         this.regex = match;
         this.script = script;
+        this.flags = flags || ['g', 'i'];
 
         this.#validateProps();
     }
