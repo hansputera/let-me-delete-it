@@ -25,7 +25,7 @@ client.on('ready', () => {
 
 client.on('message', async (ctx) => {
     const rules = [...ruleReader.rules.values()]
-        .filter(r => r.activated)
+        .filter(r => r.activated && ((r.onGroup && ctx.isGroup) || (r.onPM && ctx.isPM)))
         .map(r => ruleReader.findRule(r.name));
 
     await Promise.any(rules.filter(r => r.rule.regex?.length && r.rule.flags)
