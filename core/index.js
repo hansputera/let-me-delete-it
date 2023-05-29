@@ -24,12 +24,16 @@ client.on('ready', () => {
 });
 
 client.on('message', async (ctx) => {
+    console.log(ctx.text);
     const rules = [...ruleReader.rules.values()].map(r => ruleReader.findRule(r.name));
 
     try {
         const ruleExec = await Promise.race(rules.map(r => r.scriptFn(ctx)));
         if (ruleExec) {
-            await ctx.delete();
+            await ctx.client.raw.sendMessage(ctx.raw.key.remoteJid, {
+                delete: ctx.raw.key,
+            }).catch(() => {});
+            // await ctx.delete();
         }
     } catch (e) {
         console.log('Rule execute failures:', e);
