@@ -23,4 +23,17 @@ client.on('ready', () => {
     ruleReader.load();
 });
 
+client.on('message', async (ctx) => {
+    const rules = [...ruleReader.rules.values()].map(r => ruleReader.findRule(r.name));
+
+    try {
+        const ruleExec = await Promise.race(rules.map(r => r.scriptFn(ctx)));
+        if (ruleExec) {
+            await ctx.delete();
+        }
+    } catch (e) {
+        console.log('Rule execute failures:', e);
+    }
+});
+
 client.launch();

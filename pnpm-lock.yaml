@@ -2,8 +2,8 @@ lockfileVersion: '6.0'
 
 dependencies:
   gampang:
-    specifier: ^2.1.0
-    version: 2.1.0
+    specifier: ^2.1.1
+    version: 2.1.1
   module-alias:
     specifier: ^2.2.2
     version: 2.2.2
@@ -384,8 +384,8 @@ packages:
     engines: {node: '>=8'}
     dev: false
 
-  /gampang@2.1.0:
-    resolution: {integrity: sha512-XSUAxArTUjtxB5/CN99NZ5iNsFAhID/98qu9j6o7fNRvcsjSDOQUiIASSZzLSYfqTvRrXuHQb04Vc0D2e0yyBA==}
+  /gampang@2.1.1:
+    resolution: {integrity: sha512-YFsomT2HBvCZ0cE+ZzQnmGyJiwFR9j1Ah5VPCdbT/zwpN4+HuPC/C8MdDQoIELanzbqld9tbalUqKbeQFoxiwA==}
     engines: {node: '>=12.x'}
     dependencies:
       '@adiwajshing/baileys': /@whiskeysockets/baileys@6.1.0(@adiwajshing/keyed-db@0.2.4)

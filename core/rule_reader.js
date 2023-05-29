@@ -41,9 +41,15 @@ class RuleReader
             console.info('[Rule] Registering', ruleFile);
             if (Array.isArray(ruleJson)) {
                 ruleJson.forEach(json => {
+                    if (json.script) {
+                        this.findScript(json.script.target);
+                    }
                     this.rules.set(json.name, new Rule(json));
                 });
             } else {
+                if (json.script) {
+                    this.findScript(json.script.target);
+                }
                 this.rules.set(ruleJson.name, new Rule(ruleJson));
             }
         }
@@ -82,10 +88,10 @@ class RuleReader
         if (this.scripts.has(name) && !Boolean(reload))
             return this.scripts.get(name);
         
-        const resolvedScriptPath = require.resolve(this.ruleScriptsPath, name);
+        const resolvedScriptPath = require.resolve(path.resolve(this.ruleScriptsPath, `${name}.js`));
         const imports = require(resolvedScriptPath);
 
-        this.scripts.set(name, new Map(imports));
+        this.scripts.set(name, new Map(Object.entries(imports)));
         return this.findScript(name);
     }
 
